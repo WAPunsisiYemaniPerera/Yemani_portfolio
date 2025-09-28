@@ -164,7 +164,7 @@ const Projects = () => {
     const featuredProject = projectsData.find(p => p.featured);
     const otherProjects = projectsData.filter(p => !p.featured);
     return (
-        <motion.section id="projects" className="py-24 page-background text-white" initial="hidden" animate="visible" variants={containerVariants}>
+        <motion.section id="projects" className="pt-12 pb-24 page-background text-white" initial="hidden" animate="visible" variants={containerVariants}>
             <div className="container mx-auto px-6">
                 <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="text-center mb-16">
                     <h2 className="text-4xl font-bold">My Projects</h2>

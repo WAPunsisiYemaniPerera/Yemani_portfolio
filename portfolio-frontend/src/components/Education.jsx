@@ -21,13 +21,13 @@ const Education = () => {
     return (
         <motion.section
             id="education"
-            className="py-24 page-background text-white"
+            className="pt-12 pb-24 page-background text-white"
             initial="hidden"
             animate="visible"
             variants={timelineVariants}
         >
-            <div className="container mx-auto px-6">
-                <motion.div variants={itemVariants} className="text-center mb-16">
+            <div className="container mx-auto px-6 pb-50">
+                <motion.div variants={itemVariants} className="text-center mb-8">
                     <h2 className="text-4xl font-bold">My Education</h2>
                     <p className="text-[#8892b0] mt-2">My academic journey and qualifications.</p>
                 </motion.div>

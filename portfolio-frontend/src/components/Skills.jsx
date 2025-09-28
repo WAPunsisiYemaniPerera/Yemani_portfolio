@@ -60,7 +60,7 @@ const Skills = () => {
     return (
         <motion.section
             id="skills"
-            className="py-24 page-background text-white"
+            className="pt-12 pb-24 page-background text-white"
             initial="hidden"
             animate="visible"
             viewport={{ once: true }}
