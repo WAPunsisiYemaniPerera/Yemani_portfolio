@@ -6,6 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
+import Connect from './components/Connect';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/skills" element={<Skills />}/>
         <Route path="/education" element={<Education />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/connect" element={<Connect />} />
       </Routes>
     </div>
   );
