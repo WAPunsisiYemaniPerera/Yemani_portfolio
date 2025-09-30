@@ -14,13 +14,13 @@ const icons = [
     { component: SiTailwindcss, color: '#06B6D4' },
 ];
 
-// We create a separate component for a single icon to handle its own animation logic
+// separate component for a single icon to handle its own animation logic
 const IconAnimator = ({ Icon }) => {
     const [scope, animate] = useAnimate();
     
     useEffect(() => {
         const animateIcon = async () => {
-            // This is an infinite loop that creates a new random animation each time
+            //infinite loop 
             while (true) {
                 const duration = Math.random() * 10 + 10; // 10s to 20s
                 const x = (Math.random() - 0.5) * 40; // Random horizontal movement

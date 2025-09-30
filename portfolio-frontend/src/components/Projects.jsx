@@ -6,10 +6,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// This is the cleaned up and corrected data list
+
 const projectsData = [
     {
-        featured: true, // Only one project should be featured
+        featured: true, 
         title: "PetCareSL - AI-Powered Pet Care Hub",
         images: [
             "projects/project.png",
@@ -78,7 +78,7 @@ const projectsData = [
     },
 ];
 
-// Moved Arrow components outside of ProjectCard for better performance
+
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return <div className={className} style={{ ...style, display: "block", right: "10px", zIndex: 1 }} onClick={onClick} />;
@@ -99,7 +99,7 @@ const ProjectCard = ({ project, isFeatured, index }) => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        nextArrow: <SampleNextArrow />, // Corrected typo here
+        nextArrow: <SampleNextArrow />, 
         prevArrow: <SamplePrevArrow />
     };
 

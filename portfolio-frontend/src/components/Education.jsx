@@ -30,7 +30,6 @@ const Education = () => {
                     
                     {/* Left Column: Lottie Animation */}
                     <motion.div variants={itemVariants}>
-                        {/* We changed 'animationData' to 'path' and gave the direct URL */}
                         <Lottie path="/education-lottie.json" loop={true} />
                     </motion.div>
 

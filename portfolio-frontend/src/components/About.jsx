@@ -38,17 +38,15 @@ const About = () => {
         loop: 1, typeSpeed: 30,
     });
     
-    // Removed activeTab state as the old tabbed journey is replaced.
+    
 
     const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } };
     const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 
-    // ===== The JavaScript Trick to Split the Text (from previous request) =====
-    // The text that has already been typed
+
     const typedText = introText.slice(0, -1);
-    // The single character currently being typed
     const typingChar = introText.slice(-1);
-    // ===================================================
+
 
     return (
         <motion.section
@@ -73,9 +71,9 @@ const About = () => {
                         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     </div>
-                    {/* New two-column layout for text and photo */}
+                   
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-6"> {/* Added p-6 here */}
-                        {/* Left Column: Typewriter Text */}
+                        
                         <div className="md:col-span-2 text-left min-h-[220px]">
                             <p className="font-mono text-lg whitespace-pre-wrap leading-relaxed">
                                 <span className="text-slate-300">{typedText}</span>
@@ -83,10 +81,10 @@ const About = () => {
                                 <Cursor cursorStyle='_' cursorColor='#64ffda' />
                             </p>
                         </div>
-                        {/* Right Column: Your Photo */}
+                        
                         <div className="md:col-span-1 flex justify-center items-center">
                             <motion.img 
-                                src="/profile3.png" // Path to your image in the public folder
+                                src="/profile3.png" 
                                 alt="Yemani Perera"
                                 className="w-50 h-50  object-cover border-4 border-[#64ffda] shadow-lg"
                                 initial={{ scale: 0.8, opacity: 0 }}
@@ -98,13 +96,13 @@ const About = () => {
                     </div>
                 </motion.div>
 
-                {/* My Philosophy section (no changes here, using existing philosophyData) */}
+                {/* My Philosophy section  */}
                 <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{once:true}} className="text-center max-w-5xl mx-auto mb-24">
                     <h2 className="text-3xl font-bold mb-4">My Philosophy</h2>
                     <p className="text-[#8892b0] mb-12">Technology should feel like a helpful friend, not a barrier. For me, that means:</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* Dynamically render philosophy cards based on philosophyData */}
+                        
                         {philosophyData.map((item, index) => (
                             <motion.div 
                                 key={index} 
@@ -121,11 +119,11 @@ const About = () => {
                     </div>
                 </motion.div>
 
-                {/* My Developer Journey section (unchanged from last update, now uses a simple vertical timeline) */}
+                {/* My Developer Journey section  */}
                 <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} className="max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-16">My Developer Journey</h2>
                     <div className="relative">
-                        {/* The vertical line */}
+                        
                         <div className="absolute top-0 h-full w-0.5 bg-slate-700 left-1/2 -translate-x-1/2"></div>
 
                         {journeyData.map((item, index) => (
@@ -144,7 +142,7 @@ const About = () => {
                                         <p className="text-[#ccd6f6]">{item.description}</p>
                                     </div>
                                 </div>
-                                {/* The dot on the timeline */}
+                                
                                 <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#64ffda] border-4 border-[#112240]"></div>
                             </motion.div>
                         ))}

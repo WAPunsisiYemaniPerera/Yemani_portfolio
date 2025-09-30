@@ -3,7 +3,7 @@ import { loadSlim } from "tsparticles-slim";
 import { useCallback, useMemo } from "react";
 
 const ParticleBackground = () => {
-  const options = useMemo(() => ({ /* ... options object is the same ... */ 
+  const options = useMemo(() => ({ 
       background: { color: { value: "#0a192f" } },
       fpsLimit: 60,
       interactivity: { events: { onHover: { enable: true, mode: "repulse" } }, modes: { repulse: { distance: 100, duration: 0.4 } } },
@@ -28,7 +28,6 @@ const ParticleBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={options}
-      // className එක වෙනස් කළා
       className="fixed top-0 left-0 w-full h-full z-0"
     />
   );
