@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail } from 'react-icons/fi';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import axios from 'axios';
 
 // Data for the orbiting icons
 const contactData = [
@@ -14,6 +15,28 @@ const contactData = [
 ];
 
 const Connect = () => {
+    // State to manage form inputs
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState(''); // To show sending status
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('Sending...');
+        try {
+            const response = await axios.post('http://localhost:5000/api/contact', formData);
+            setStatus('Message Sent Successfully!');
+            setFormData({ name: '', email: '', message: '' }); // Clear form
+        } catch (error) {
+            setStatus('Failed to send message. Please try again.');
+            console.error('Submission error:', error);
+        }
+    };
+
+
     const containerVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2, duration: 0.5 } },
@@ -38,10 +61,7 @@ const Connect = () => {
                     {/* Left Column: The Orb */}
                     <motion.div variants={containerVariants} className="hidden lg:flex justify-center items-center">
                         <div className="relative w-96 h-96 group">
-                            {/* The glowing orb effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-[#64ffda] to-blue-500 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                            
-                            {/* The container that rotates */}
                             <div className="relative w-full h-full orb-container group-hover:[animation-play-state:paused]">
                                 {contactData.map((item, index) => {
                                     const angle = (index / contactData.length) * 2 * Math.PI;
@@ -71,27 +91,23 @@ const Connect = () => {
                     </motion.div>
 
                     {/* Right Column: Contact Form */}
-                    <motion.form variants={containerVariants} className="space-y-6">
+                    <motion.form onSubmit={handleSubmit} variants={containerVariants} className="space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-semibold text-[#ccd6f6] mb-2">Name</label>
-                            <input type="text" id="name" required placeholder="Your Name" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all" />
+                            <input type="text" id="name" value={formData.name} onChange={handleChange} required placeholder="Your Name" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all" />
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-sm font-semibold text-[#ccd6f6] mb-2">Email</label>
-                            <input type="email" id="email" required placeholder="Your Email" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all" />
+                            <input type="email" id="email" value={formData.email} onChange={handleChange} required placeholder="Your Email" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all" />
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-sm font-semibold text-[#ccd6f6] mb-2">Message</label>
-                            <textarea id="message" required rows="5" placeholder="Your Message" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all"></textarea>
+                            <textarea id="message" value={formData.message} onChange={handleChange} required rows="5" placeholder="Your Message" className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all"></textarea>
                         </div>
-                        <motion.button 
-                            type="submit"
-                            className="w-full bg-[#112240] border-2 border-slate-700 text-[#ccd6f6] font-bold py-3 px-6 rounded-lg hover:bg-[#64ffda] hover:text-[#0a1f2f] hover:border-[#64ffda] transition-all duration-300"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            Submit
+                        <motion.button type="submit" disabled={status === 'Sending...'} className="w-full bg-[#112240] border-2 border-slate-700 text-[#ccd6f6] font-bold py-3 px-6 rounded-lg hover:bg-[#64ffda] hover:text-[#0a1f2f] hover:border-[#64ffda] transition-all duration-300" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                            {status === 'Sending...' ? 'Sending...' : 'Send Message'}
                         </motion.button>
+                        {status && <p className="text-center mt-4 text-sm text-[#64ffda]">{status}</p>}
                     </motion.form>
                 </div>
             </div>
