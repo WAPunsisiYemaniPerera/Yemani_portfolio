@@ -78,7 +78,7 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a 
-                        href="/projects" 
+                        href="portfolio-frontend\src\components\Projects.jsx" 
                         className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all flex items-center justify-center gap-2"
                     >
                         View My Projects
