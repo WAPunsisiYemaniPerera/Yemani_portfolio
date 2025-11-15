@@ -24,7 +24,7 @@ const philosophyData = [
     {
         icon: <FaTools size={40} />,
         title: "Simplicity in Tools",
-        text: "The best tool is one you don't have to think about. I build applications that reduce complexity, not add to it."
+        text: "I build applications that reduce complexity, not add to it."
     },
     {
         icon: <FaInfinity size={40} />,
