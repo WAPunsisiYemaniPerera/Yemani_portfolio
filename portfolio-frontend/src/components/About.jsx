@@ -14,12 +14,12 @@ const philosophyData = [
     {
         icon: <FaUserFriends size={40} />,
         title: "User-First Design",
-        text: "If an application is confusing, it's broken. I believe great design is invisible, guiding the user to their goal effortlessly."
+        text: "I believe great design is invisible, guiding the user to their goal effortlessly."
     },
     {
         icon: <FaBrain size={40} />,
         title: "Data-Driven Decisions",
-        text: "Data is just noise until you find the story. I use machine learning to uncover patterns and make software smart enough to act on them."
+        text: "I use machine learning to uncover patterns and make software smart enough to act on them."
     },
     {
         icon: <FaTools size={40} />,
@@ -29,7 +29,7 @@ const philosophyData = [
     {
         icon: <FaInfinity size={40} />,
         title: "Constant Curiosity",
-        text: "The tech world changes every day. 'Good enough' is never the final answer. I'm always learning the next thing."
+        text: "'Good enough' is never the final answer. I'm always learning the next thing."
     }
 ];
 
