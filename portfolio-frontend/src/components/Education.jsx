@@ -1,69 +1,85 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import Lottie from "lottie-react";
-// We REMOVED the import for the JSON file here.
+
+const educationData = [
+    {
+        title: "BSc in Information Technology",
+        institution: "Horizon Campus, Malabe",
+        date: "2022 – Present",
+        description: "Specializing in AI & Data Science.",
+        image: "/education/horizon.png" 
+    },
+    {
+        title: "GCE Advanced Level",
+        institution: "Gothami Balika Vidyalaya, Colombo 10",
+        date: "2017 – 2020",
+        description: "Successfully completed GCE A/L in the Biological Science stream.",
+        image: "/education/gothami.png" 
+    },
+    {
+        title: "GCE Ordinary Level",
+        institution: "Sri Rahula Balika Maha Vidyalaya, Malabe",
+        date: "2006 – 2016",
+        description: "Successfully completed GCE O/L.",
+        image: "/education/rahula.png" 
+    }
+];
 
 const Education = () => {
-    const [showCourses, setShowCourses] = useState(false);
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3 } 
+        },
+    };
 
-    const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.3 } } };
-    const itemVariants = { hidden: { x: -50, opacity: 0 }, visible: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } } };
-
-    const coursework = "Programming Fundamentals, Data Structures and Algorithms, Object-Oriented Programming, Software Design and Implementation, Web Development Information Architecture, Databases Data Management, Operating Systems, Computer Networks, Network Security, Cloud Computing, Mobile Application Development, Software Project Management";
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+    };
 
     return (
         <motion.section
             id="education"
-            className="pt-12 pb-12 page-background text-white min-h-screen flex items-center "
+            className="py-24 page-background text-white min-h-screen flex items-center"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
             <div className="container mx-auto px-6">
-                <motion.div variants={itemVariants} className="text-center mb-2">
+                <motion.div variants={itemVariants} className="text-center mb-16">
                     <h2 className="text-4xl font-bold">My Education</h2>
                     <p className="text-[#8892b0] mt-2">My academic journey and qualifications.</p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    
-                    {/* Left Column: Lottie Animation */}
-                    <motion.div variants={itemVariants}>
-                        <Lottie path="/education-lottie.json" loop={true} />
-                    </motion.div>
-
-                    {/* Right Column: Timeline Container */}
-                    <div className="relative">
-                        <div className="absolute left-4 top-0 h-full w-0.5 bg-slate-700"></div>
-                        
-                        <motion.div variants={itemVariants} className="mb-12 pl-12 relative">
-                            <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-[#112240] border-4 border-[#64ffda] flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-[#64ffda]"></div></div>
-                            <div className="bg-[#112240] rounded-lg shadow-lg p-6 w-full">
-                                <p className="text-slate-400 text-sm">2022 – Present</p>
-                                <h3 className="text-xl font-bold text-white mt-1">BSc in Information Technology</h3>
-                                <p className="text-[#64ffda] mb-4">Horizon Campus, Malabe</p>
-                                <p className="text-[#ccd6f6] mb-4">Specializing in AI & Data Science.</p>
-                                <button onClick={() => setShowCourses(!showCourses)} className="flex items-center text-[#64ffda] hover:text-white transition-colors">
-                                    {showCourses ? 'Hide Coursework' : 'View Relevant Coursework'}
-                                    {showCourses ? <FaChevronUp className="ml-2" /> : <FaChevronDown className="ml-2" />}
-                                </button>
-                                {showCourses && (<ul className="mt-4 list-disc list-inside text-[#8892b0] text-sm">{coursework.split(', ').map(course => <li key={course}>{course}</li>)}</ul>)}
+                <motion.div 
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+                    variants={containerVariants}
+                >
+                    {educationData.map((edu, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-[#112240] rounded-lg shadow-lg p-6 text-center transition-all duration-300 hover:shadow-2xl hover:shadow-[#64ffda]/20"
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.05 }} 
+                        >
+                            
+                            <div className="w-full h-40 mb-4 flex items-center justify-center"> 
+                                <img 
+                                    src={edu.image} 
+                                    alt={`${edu.institution} logo`} 
+                                    className="h-40 w-auto object-contain" 
+                                />
                             </div>
+                            
+                            <h3 className="text-xl font-bold text-white">{edu.title}</h3>
+                            <p className="text-lg font-semibold text-[#64ffda] mt-1">{edu.institution}</p>
+                            <p className="text-sm text-slate-400 mt-2 mb-3">{edu.date}</p>
+                            <p className="text-sm text-[#8892b0]">{edu.description}</p>
                         </motion.div>
-
-                        <motion.div variants={itemVariants} className="mb-8 pl-12 relative">
-                            <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-[#112240] border-4 border-[#64ffda] flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-[#64ffda]"></div></div>
-                            <div className="bg-[#112240] rounded-lg shadow-lg p-6 w-full">
-                                <p className="text-slate-400 text-sm">2017 – 2020</p>
-                                <h3 className="text-xl font-bold text-white mt-1">GCE Advanced Level</h3>
-                                <p className="text-[#64ffda] mb-4">Gothami Balika Vidyalaya, Colombo 10</p>
-                                <p className="text-[#ccd6f6]">Stream: Biological Science</p>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                </div>
+                    ))}
+                </motion.div>
             </div>
         </motion.section>
     );
