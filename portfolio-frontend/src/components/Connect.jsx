@@ -27,7 +27,7 @@ const Connect = () => {
         e.preventDefault();
         setStatus('Sending...');
         try {
-            const response = await axios.post('http://localhost:5000/api/contact', formData);
+            const response = await axios.post('/.netlify/functions/contact', formData);
             setStatus('Message Sent Successfully!');
             setFormData({ name: '', email: '', message: '' }); // Clear form
         } catch (error) {
