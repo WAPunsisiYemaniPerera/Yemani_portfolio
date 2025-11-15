@@ -57,7 +57,7 @@ const projectsData = [
         description: "A fully responsive multi-page portfolio built from scratch with React and a Node.js backend. Features advanced animations (3D tilt, path drawing, floating elements) using Framer Motion and Lottie, with a functional Node/Express backend for the contact form.",
         tags: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express.js", "Nodemailer"],
         github: "https://github.com/WAPunsisiYemaniPerera/Yemani_portfolio.git",
-        live: "https://github.com/WAPunsisiYemaniPerera/Yemani_portfolio.git",
+        live: "https://yemaniportfolio.netlify.app/",
     },
     {
         featured: false,
