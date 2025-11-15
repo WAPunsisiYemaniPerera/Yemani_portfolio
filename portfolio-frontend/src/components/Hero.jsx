@@ -89,7 +89,7 @@ const Hero = () => {
                         className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all flex items-center justify-center gap-2"
                     >
                         <FaDownload />
-                        <span>Download CV</span>
+                        <span>Grab my CV</span>
                     </a>
                 </div>
 

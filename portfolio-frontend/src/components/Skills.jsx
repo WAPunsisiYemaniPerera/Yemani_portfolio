@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGit, FaAngular, FaLinux, FaAws, FaPhp
+    FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGit, FaAngular, FaLinux, FaAws, FaPhp, FaKaggle
 } from 'react-icons/fa';
 import { FaFlutter } from 'react-icons/fa6';
 import { IoLogoAndroid, IoLogoDocker } from 'react-icons/io5';
 import { 
     SiJavascript, SiMongodb, SiTailwindcss, SiFigma, SiCplusplus, SiExpress, SiPostman, 
-    SiGooglecloud, SiFirebase, SiStreamlit, SiMysql, SiNumpy, SiPandas, SiScikitlearn, SiTensorflow
+    SiGooglecloud, SiFirebase, SiStreamlit, SiMysql, SiNumpy, SiPandas, SiScikitlearn, SiTensorflow, SiC
 } from "react-icons/si";
 
 const Skills = () => {
@@ -20,7 +20,7 @@ const Skills = () => {
         { name: 'Java', icon: <FaJava size={50} />, color: '#f89820' },
         { name: 'Python', icon: <FaPython size={50} />, color: '#3776AB' },
         { name: 'JavaScript', icon: <SiJavascript size={50} />, color: '#F7DF1E' },
-        { name: 'C++', icon: <SiCplusplus size={50} />, color: '#00599C' },
+        { name: 'C Programming', icon: <SiC size={50} />, color: '#A8B9CC' },
         { name: 'PHP', icon: <FaPhp size={50} />, color: '#777BB4' },
         { name: 'HTML5', icon: <FaHtml5 size={50} />, color: '#E34F26' },
         { name: 'CSS3', icon: <FaCss3Alt size={50} />, color: '#1572B6' },
@@ -51,6 +51,7 @@ const Skills = () => {
         { name: 'Linux', icon: <FaLinux size={50} />, color: '#FCC624' },
         { name: 'Figma', icon: <SiFigma size={50} />, color: '#F24E1E' },
         { name: 'Postman', icon: <SiPostman size={50} />, color: '#FF6C37' },
+        { name: 'Kaggle', icon: <FaKaggle size={50} />, color: '#20BEFF' },
         
     ];
 
