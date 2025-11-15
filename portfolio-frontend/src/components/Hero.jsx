@@ -19,10 +19,10 @@ const icons = [
 
 const MemoizedFloatingIcons = React.memo(() => {
     return (
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-50">
             {icons.map((Icon, index) => {
                 const duration = Math.random() * 15 + 15;
-                const size = Math.random() * 20 + 25;
+                const size = Math.random() * 25 + 30;
                 const top = `${Math.random() * 90}%`;
                 const left = `${Math.random() * 90}%`;
                 return (
@@ -79,7 +79,7 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a 
                         href="/projects" 
-                        className="bg-[#64ffda] text-[#0a192f] font-bold py-3 px-8 rounded hover:bg-opacity-80 transition-all"
+                        className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all flex items-center justify-center gap-2"
                     >
                         View My Projects
                     </a>

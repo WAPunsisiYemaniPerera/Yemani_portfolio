@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
-import { FaUserFriends, FaBrain, FaTools, FaInfinity } from 'react-icons/fa';
+import { FaUserFriends, FaBrain, FaTools, FaInfinity} from 'react-icons/fa';
+import Tilt from 'react-parallax-tilt';
 
 const journeyData = [
     { year: "2021", title: "First Steps", description: "Started my coding journey with HTML, CSS, and JavaScript, building small projects and discovering a love for solving problems through code." },
@@ -101,19 +102,25 @@ const About = () => {
                     <h2 className="text-3xl font-bold mb-4">My Philosophy</h2>
                     <p className="text-[#8892b0] mb-12">Technology should feel like a helpful friend, not a barrier. For me, that means:</p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {philosophyData.map((item, index) => (
-                            <motion.div 
-                                key={index} 
-                                variants={itemVariants} 
-                                className={`md:col-span-${index === 0 || index === 3 ? '2' : '1'} bento-card rounded-xl`}
-                            >
-                                <div className="bento-content flex flex-col items-center justify-center h-full">
-                                    {item.icon}
-                                    <h3 className="text-xl font-bold text-[#64ffda] mt-4 mb-2">{item.title}</h3>
-                                    <p className="text-[#8892b0]">{item.text}</p>
-                                </div>
+                            <motion.div key={index} variants={itemVariants}>
+                                <Tilt
+                                    className="p-1 rounded-xl"
+                                    glareEnable={true}
+                                    glareMaxOpacity={0.15}
+                                    glareColor="#ffffff"
+                                    glarePosition="all"
+                                    tiltMaxAngleX={10}
+                                    tiltMaxAngleY={10}
+                                    perspective={1000}
+                                >
+                                    <div className="bg-[#112240] p-6 rounded-lg text-center h-48 flex flex-col justify-center items-center shadow-lg ring-1 ring-slate-700">
+                                        <div className="text-[#64ffda] mb-3">{item.icon}</div>
+                                        <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                                        <p className="text-sm text-[#8892b0]">{item.text}</p>
+                                    </div>
+                                </Tilt>
                             </motion.div>
                         ))}
                     </div>
