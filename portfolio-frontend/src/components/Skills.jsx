@@ -27,8 +27,6 @@ const Skills = () => {
         
         // Frontend & Mobile
         { name: 'React', icon: <FaReact size={50} />, color: '#61DAFB' },
-        { name: 'Angular', icon: <FaAngular size={50} />, color: '#DD0031' },
-        { name: 'Flutter', icon: <FaFlutter size={50} />, color: '#02569B' },
         { name: 'Tailwind CSS', icon: <SiTailwindcss size={50} />, color: '#06B6D4' },
         { name: 'Android', icon: <IoLogoAndroid size={50} />, color: '#3DDC84' },
 
@@ -47,7 +45,6 @@ const Skills = () => {
 
         // Tools & Platforms
         { name: 'Git', icon: <FaGit size={50} />, color: '#F05032' },
-        { name: 'Docker', icon: <IoLogoDocker size={50} />, color: '#2496ED' },
         { name: 'AWS', icon: <FaAws size={50} />, color: '#FF9900' },
         { name: 'Google Cloud', icon: <SiGooglecloud size={50} />, color: '#4285F4' },
         { name: 'Firebase', icon: <SiFirebase size={50} />, color: '#FFCA28' },
