@@ -7,10 +7,10 @@ import axios from 'axios';
 
 // Data for the orbiting icons
 const contactData = [
-    { icon: <FaGithub size={32} />, title: "GitHub", href: "#" },
-    { icon: <FaLinkedin size={32} />, title: "LinkedIn", href: "#" },
-    { icon: <FaInstagram size={32} />, title: "Instagram", href: "#" },
-    { icon: <FiMail size={32} />, title: "Email", href: "mailto:yemaniperera@gmail.com" },
+    { icon: <FaGithub size={32} />, title: "GitHub", href: "https://github.com/WAPunsisiYemaniPerera" },
+    { icon: <FaLinkedin size={32} />, title: "LinkedIn", href: "https://www.linkedin.com/in/yemani-perera-09b4b8211" },
+    { icon: <FaInstagram size={32} />, title: "Instagram", href: "https://www.instagram.com/yemaa_perera?igsh=MTViMDI3MXQ2Z3Q1Mg==" },
+    { icon: <FiMail size={32} />, title: "Email", href: "mailto:punsisiyemani18@gmail.com" },
     { icon: <FaXTwitter size={32} />, title: "X (Twitter)", href: "#" },
 ];
 
