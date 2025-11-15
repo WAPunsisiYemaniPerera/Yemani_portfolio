@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // We need to add FaDownload for the new button
 import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaNodeJs, FaPython, FaJava, FaDocker, FaAngular, FaInstagram, FaDownload } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';

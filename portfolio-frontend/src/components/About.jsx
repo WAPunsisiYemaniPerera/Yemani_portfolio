@@ -14,28 +14,28 @@ const philosophyData = [
     {
         icon: <FaUserFriends size={40} />,
         title: "User-First Design",
-        text: "Crafting intuitive experiences that anyone can navigate."
+        text: "If an application is confusing, it's broken. I believe great design is invisible, guiding the user to their goal effortlessly."
     },
     {
         icon: <FaBrain size={40} />,
         title: "Data-Driven Decisions",
-        text: "Turning data into decisions through machine learning."
+        text: "Data is just noise until you find the story. I use machine learning to uncover patterns and make software smart enough to act on them."
     },
     {
         icon: <FaTools size={40} />,
         title: "Simplicity in Tools",
-        text: "Building tools that simplify life instead of complicating it."
+        text: "The best tool is one you don't have to think about. I build applications that reduce complexity, not add to it."
     },
     {
         icon: <FaInfinity size={40} />,
         title: "Constant Curiosity",
-        text: "Staying curious and never stopping at “good enough”."
+        text: "The tech world changes every day. 'Good enough' is never the final answer. I'm always learning the next thing."
     }
 ];
 
 const About = () => {
     const [introText] = useTypewriter({
-        words: [ "I’m an aspiring Machine Learning Engineer & Full-Stack Developer with a love for building web applications that are both intelligent and user-friendly. Currently pursuing a BSc (Hons) in Information Technology (AI & Data Science) at Horizon Campus, I’ve gained hands-on experience with databases, APIs, and end-to-end applications — but my real passion is blending web development and machine learning to create smart, real-world solutions." ], 
+        words: [ "I am a solution-driven developer with a dual passion for building robust Full-Stack applications and intelligent Machine Learning systems. With strong practical skills in the MERN stack, I build end-to-end applications and APIs. My true interest, however, lies at the intersection of these two fields: I am deeply focused on integrating AI models into web platforms to create truly smart, data-driven, real-world tools." ], 
         loop: 1, typeSpeed: 30,
     });
     
