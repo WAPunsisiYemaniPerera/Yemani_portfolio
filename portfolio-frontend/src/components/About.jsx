@@ -115,7 +115,7 @@ const About = () => {
                                     tiltMaxAngleY={10}
                                     perspective={1000}
                                 >
-                                    <div className="bg-[#112240] p-6 rounded-lg text-center h-48 flex flex-col justify-center items-center shadow-lg ring-1 ring-slate-700">
+                                    <div className="bg-[#112240] p-6 rounded-lg text-center h-55 flex flex-col justify-center items-center shadow-lg ring-1 ring-slate-700">
                                         <div className="text-[#64ffda] mb-3">{item.icon}</div>
                                         <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                                         <p className="text-sm text-[#8892b0]">{item.text}</p>
