@@ -77,12 +77,12 @@ const Hero = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <a 
-                        href="/projects" 
+                    <Link 
+                        to="/projects" 
                         className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all flex items-center justify-center gap-2"
                     >
                         View My Projects
-                    </a>
+                    </Link>
                     <a 
                         href="projects/Yemani_Perera.pdf" 
                         download="Yemani_Perera.pdf" // This tells the browser to download the file
