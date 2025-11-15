@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaNodeJs, FaPython, FaJava, FaDocker, FaAngular } from 'react-icons/fa';
+// We need to add FaDownload for the new button
+import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaNodeJs, FaPython, FaJava, FaDocker, FaAngular, FaInstagram, FaDownload } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
 import { SiJavascript, SiMongodb, SiTailwindcss, SiCplusplus, SiFirebase } from 'react-icons/si';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
 import ParticleBackground from './ParticleBackground';
@@ -44,14 +46,14 @@ const MemoizedParticleBackground = React.memo(ParticleBackground);
 
 const Hero = () => {
     const [text] = useTypewriter({
-        words: ['Aspiring Full Stack Developer', 'AI/ML Enthusiast', 'Passionate Coder'],
+        words: ['AI/ML Enthusiast', 'Aspiring Full Stack Developer', 'Passionate Coder'],
         loop: {},
         typeSpeed: 100,
         deleteSpeed: 80,
     });
 
     return (
-        <div className="relative pt-10 pb-3 md:pt-8 md:pb-24 flex items-center justify-center text-center overflow-hidden">
+        <div className="relative pt-10 pb-16 md:pt-20 md:pb-15 flex items-center justify-center text-center overflow-hidden">
             <MemoizedParticleBackground />
             <MemoizedFloatingIcons />
             
@@ -62,21 +64,36 @@ const Hero = () => {
                     <span>{text}</span>
                     <Cursor cursorStyle='|' />
                 </h2>
-
                 <p className="max-w-2xl text-lg text-[#ccd6f6] mb-6 leading-relaxed">
                     I design web applications that don’t just look good — they <span className="text-[#64ffda] font-semibold">think smart</span>. 
                     Passionate about web development and machine learning, I love turning ideas into <span className="text-[#64ffda] font-semibold">dynamic, intelligent, and user-friendly</span> digital experiences 
                     (fueled by coffee, of course ☕)
                 </p>
-
                 <div className="flex space-x-6 mb-8">
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaGithub size={30} /></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaLinkedin size={30} /></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaTwitter size={30} /></a>
+                    <a href="https://github.com/WAPunsisiYemaniPerera" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaGithub size={30} /></a>
+                    <a href="https://www.linkedin.com/in/yemani-perera-09b4b8211" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaLinkedin size={30} /></a>
+                    <a href="https://www.instagram.com/yemaa_perera?igsh=MTViMDI3MXQ2Z3Q1Mg==" target="_blank" rel="noopener noreferrer" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FaInstagram size={30} /></a>
+                    <a href="mailto:punsisiyemani18@gmail.com" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"><FiMail size={30} /></a>
                 </div>
-                <a href="/projects" className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all">
-                    View My Projects
-                </a>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <a 
+                        href="/projects" 
+                        className="bg-[#64ffda] text-[#0a192f] font-bold py-3 px-8 rounded hover:bg-opacity-80 transition-all"
+                    >
+                        View My Projects
+                    </a>
+                    <a 
+                        href="projects/Yemani_Perera.pdf" 
+                        download="Yemani_Perera.pdf" // This tells the browser to download the file
+                        className="bg-transparent border-2 border-[#64ffda] text-[#64ffda] font-bold py-3 px-8 rounded hover:bg-[#64ffda] hover:text-[#0a1f2f] transition-all flex items-center justify-center gap-2"
+                    >
+                        <FaDownload />
+                        <span>Download CV</span>
+                    </a>
+                </div>
+
+
             </div>
         </div>
     )
